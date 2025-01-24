@@ -1,0 +1,16 @@
+### Nuxt ###
+.nuxt/
+.output/
+
+### Libraries ###
+dist/
+
+### Turborepo ###
+.turbo/
+
+### Node.js ###
+node_modules/
+
+### IntelliJ IDEA ###
+.idea/
+*.iml

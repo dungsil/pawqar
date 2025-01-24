@@ -1,0 +1,32 @@
+{
+  "name": "@pawquar/eslint",
+  "type": "module",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "eslint": "./node_modules/eslint/bin/eslint.js"
+  },
+  "scripts": {
+    "dev": "pnpm -s run build --watch",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "build": "tsup src/index.ts --minify --format esm --dts"
+  },
+  "peerDependencies": {
+    "@pawquar/typescript": "workspace:*"
+  },
+  "dependencies": {
+    "@antfu/eslint-config": "3.16.0",
+    "@nuxt/eslint-config": "0.7.5",
+    "@types/eslint-plugin-security": "3.0.0",
+    "eslint": "9.18.0",
+    "eslint-plugin-format": "1.0.1",
+    "eslint-plugin-security": "3.0.1",
+    "eslint-plugin-turbo": "2.3.4"
+  },
+  "devDependencies": {
+    "@pawquar/typescript": "workspace:*",
+    "jiti": "2.4.2"
+  }
+}

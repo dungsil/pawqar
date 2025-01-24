@@ -1,0 +1,32 @@
+{
+  "$schema": "https://turbo.build/schema.v2.json",
+  "globalDependencies": [
+    "**/.env"
+  ],
+  "tasks": {
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": [],
+      "outputs": [
+        "**/.nuxt/"
+      ]
+    },
+    "lint": {
+      "dependsOn": []
+    },
+    "lint:fix": {
+      "dependsOn": []
+    },
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "**/dist/",
+        "**/.output/",
+        "**/node_modules/.cache/"
+      ]
+    }
+  }
+}

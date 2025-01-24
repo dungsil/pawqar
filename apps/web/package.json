@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "type": "module",
+  "name": "@pawquar/web",
+  "scripts": {
+    "postinstall": "nuxi prepare",
+    "dev": "nuxi dev",
+    "build": "nuxi build"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@pawquar/eslint": "workspace:*",
+    "@pawquar/typescript": "workspace:*",
+    "nuxt": "3.15.2",
+    "vue": "3.5.13",
+    "vue-router": "4.5.0"
+  }
+}
