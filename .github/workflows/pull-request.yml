@@ -18,4 +18,4 @@ jobs:
         uses: actions/dependency-review-action@v4
         with:
           comment-summary-in-pr: true
-          deny-licenses: "Apache-1.0, Apache-1.1, GPL, LGPL, AGPL"
+          deny-licenses: "Apache-1.0, Apache-1.1, GPL-3.0, LGPL-3.0, AGPL-3.0"

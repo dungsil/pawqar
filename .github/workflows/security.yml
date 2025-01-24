@@ -1,13 +1,6 @@
 name: Periodic security scan
 
 on:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - '**/*.md'
-      - '**/.git*'
-      - '!**/.github/workflows/security.yml'
   schedule:
     - cron: "0 0 * * 1"
   workflow_dispatch:
