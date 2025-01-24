@@ -4,7 +4,7 @@
     "config:recommended",
     ":automergePr",
     ":automergePatch",
-    ":automergeLinter",
+    ":automergeLinters",
     ":automergeTesters",
     ":automergeTypes",
     ":automergeRequireAllStatusChecks",
