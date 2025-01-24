@@ -9,7 +9,7 @@
     "lint:fix": "turbo run lint:fix --parallel",
     "build": "turbo run build",
     "build:web": "turbo run build --filter=@pawquar/web",
-    "docker:web": "docker compose -f ./docker/web.yml build",
+    "docker:web": "docker compose -f ./apps/web/docker-compose.yml build",
     "ci:test:web": "act -W .github/workflows/ci-web.yml --artifact-server-path ./node_modules/.cache/act/artifacts --cache-server-path ./node_modules/.cache/act/cache"
   },
   "devDependencies": {

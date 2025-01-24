@@ -71,7 +71,6 @@ jobs:
       - name: Build webapp
         run: "pnpm build:web"
       - name: Upload artifacts
-        if: github.event_name != 'pull_request' # pull request 시에는 빌드 결과를 업로드하지 않는다.
         uses: actions/upload-artifact@v4
         with:
           name: pawquar-web-${{ github.sha }}
@@ -86,3 +85,30 @@ jobs:
             .turbo/cache/
             node_modules/.cache/.nuxt/
             apps/web/node_modules/.cache/
+
+  sast:
+    name: Static code analyze
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      security-events: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          queries: security-and-quality
+          languages: typescript
+          build-mode: none
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: pawquar-web-${{ github.sha }}
+          path: |
+            apps/web/package.json
+            apps/web/.output/
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:typescript"
