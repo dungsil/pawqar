@@ -1,0 +1,7 @@
+services:
+  web:
+    image: pawquar-web
+    build:
+      context: ../apps/web
+    ports:
+      - "3000:3000"
