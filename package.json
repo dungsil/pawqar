@@ -15,6 +15,6 @@
   "devDependencies": {
     "@pawquar/eslint": "workspace:*",
     "npm-run-all2": "7.0.2",
-    "turbo": "2.4.0"
+    "turbo": "2.4.2"
   }
 }
