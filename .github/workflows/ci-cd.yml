@@ -74,8 +74,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: pawquar-${{ github.sha }}
+          include-hidden-files: 'true'
           path: |
-            .output/
+            ./.output/
       - name: Upload build cache
         uses: actions/cache@v4
         with:
@@ -103,7 +104,7 @@ jobs:
         with:
           name: pawquar-${{ github.sha }}
           path: |
-            .output/
+            ./.output/
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
         with:

@@ -13,7 +13,6 @@
     "lint": "run-p -s lint:*",
     "lintfix:eslint": "eslint --fix",
     "lintfix:prettier": "prettier --log-level=error --write .",
-    "lintfix:type": "nuxi typecheck",
     "lintfix": "run-p -s lintfix:*"
   },
   "devDependencies": {
