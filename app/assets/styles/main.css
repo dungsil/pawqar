@@ -1,0 +1,3 @@
+@import 'tailwindcss/theme' layer(theme);
+@import './_base.css' layer(base);
+@import 'tailwindcss/utilities' layer(utilities);

@@ -1,0 +1,21 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+
+  border-width: 0;
+  border-style: solid;
+
+  background-origin: border-box;
+  background-repeat: no-repeat;
+}
+
+:root {
+  overflow: hidden;
+  block-size: 100%;
+}
+
+body {
+  margin: 0;
+  min-block-size: 100%;
+}

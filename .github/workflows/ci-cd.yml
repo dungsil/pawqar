@@ -1,0 +1,110 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - '**/*.md'
+      - '**/.git*'
+      - '**/*ignore'
+      - '**/*rc.json'
+      - '!**/.github/workflows/ci-cd.yml'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.sha }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint & Format
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install PNPM
+        uses: pnpm/action-setup@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: pnpm
+          node-version-file: .node-version
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Running Lint
+        run: pnpm lintfix
+      - name: Add commit
+        uses: EndBug/add-and-commit@v9
+        if: ${{ !env.ACT }} # 로컬 테스트 시에는 커밋하지 않는다.
+        with:
+          commit: --signoff
+          default_author: github_actor
+          message: 'style: 자동 코드 스타일 수정 [skip ci]'
+          push: true
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    needs:
+      - lint
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install PNPM
+        uses: pnpm/action-setup@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: pnpm
+          node-version-file: .node-version
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Download build cache
+        uses: actions/cache@v4
+        with:
+          key: ${{ github.workflow }}-build_cache-${{ runner.os }}
+          path: |
+            node_modules/.cache/
+      - name: Build webapp
+        run: pnpm build
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: pawquar-${{ github.sha }}
+          path: |
+            .output/
+      - name: Upload build cache
+        uses: actions/cache@v4
+        with:
+          key: ${{ github.workflow }}-build_cache-${{ runner.os }}
+          path: |
+            node_modules/.cache/
+
+  sast:
+    name: Static code analyze
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      security-events: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          queries: security-and-quality
+          languages: typescript
+          build-mode: none
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: pawquar-${{ github.sha }}
+          path: |
+            .output/
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: '/language:typescript'

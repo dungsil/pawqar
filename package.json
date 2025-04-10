@@ -1,0 +1,41 @@
+{
+  "name": "pawqar",
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@10.8.0+sha512.0e82714d1b5b43c74610193cb20734897c1d00de89d0e18420aebc5977fa13d780a9cb05734624e81ebd81cc876cd464794850641c48b9544326b5622ca29971",
+  "scripts": {
+    "postinstall": "nuxi prepare",
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "lint:eslint": "eslint",
+    "lint:prettier": "prettier --log-level=warn --check .",
+    "lint:type": "nuxi typecheck",
+    "lint": "run-p -s lint:*",
+    "lintfix:eslint": "eslint --fix",
+    "lintfix:prettier": "prettier --log-level=error --write .",
+    "lintfix:type": "nuxi typecheck",
+    "lintfix": "run-p -s lintfix:*"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:",
+    "@parcel/watcher": "catalog:",
+    "@tailwindcss/vite": "catalog:",
+    "@types/node": "catalog:",
+    "eslint": "catalog:",
+    "eslint-config-prettier": "catalog:",
+    "eslint-plugin-vuejs-accessibility": "catalog:",
+    "jiti": "catalog:",
+    "nitropack": "catalog:",
+    "npm-run-all2": "catalog:",
+    "nuxt": "catalog:",
+    "prettier": "catalog:",
+    "reka-ui": "catalog:",
+    "tailwind-variants": "catalog:",
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:",
+    "vue-tsc": "catalog:"
+  }
+}
