@@ -1,3 +1,7 @@
+### Cloudflare pages ###
+.wrangler/
+dist/
+
 ### Nuxt ###
 .nuxt/
 .output/
