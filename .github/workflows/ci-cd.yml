@@ -1,3 +1,4 @@
+$schema: https://json.schemastore.org/github-workflow.json
 name: CI
 
 on:
@@ -6,6 +7,7 @@ on:
     branches:
       - main
   pull_request:
+    types: [opened, synchronize, reopened, closed]
     branches:
       - main
     paths-ignore:
@@ -83,7 +85,6 @@ jobs:
           key: ${{ github.workflow }}-build_cache-${{ runner.os }}
           path: |
             node_modules/.cache/
-
   sast:
     name: Static code analyze
     runs-on: ubuntu-latest
@@ -109,3 +110,25 @@ jobs:
         uses: github/codeql-action/analyze@v3
         with:
           category: '/language:typescript'
+  preview-deploy:
+    if: ${{ github.event_name == 'pull_request' }}
+    name: Deploy (preview)
+    environment: pr-preview
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: pawquar-${{ github.sha }}
+          path: |
+            ./.output/
+      - uses: shidil/cloudflare-workers-preview@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          cf_token: ${{ secrets.CLOUDFLARE_WORKER_API_TOKEN }}
+          cf_account: ${{ secrets.CLOUDFLARE_WORKER_ACCOUNT_ID }}
+          domain: pawqar.workers.dev
+          teardown: 'true'
+          build: |
+            pnpm install --frozen-lockfile
+            pnpm build --preset cloudflare-pages
