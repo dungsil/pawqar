@@ -133,7 +133,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_WORKER_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_WORKER_ACCOUNT_ID }}
           packageManager: pnpm
-          command: pages deploy --project-name=pawqar
+          command: "pages deploy --project-name=pawqar --commit-hash=${{ github.sha }} --branch=pr-${{ github.event.number }}"
           preCommands: |
             pnpm install --frozen-lockfile
             pnpm build:preview
