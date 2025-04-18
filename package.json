@@ -6,14 +6,17 @@
   "scripts": {
     "postinstall": "nuxi prepare",
     "dev": "nuxi dev",
+    "dev:preview": "pnpm build --preset cloudflare-pages && wrangler pages dev",
     "build": "nuxi build",
+    "build:preview": "nuxi build --preset cloudflare-pages",
     "lint:eslint": "eslint",
     "lint:prettier": "prettier --log-level=warn --check .",
     "lint:type": "nuxi typecheck",
     "lint": "run-p -s lint:*",
     "lintfix:eslint": "eslint --fix",
     "lintfix:prettier": "prettier --log-level=error --write .",
-    "lintfix": "run-p -s lintfix:*"
+    "lintfix": "run-p -s lintfix:*",
+    "start:preview": "pnpm build:preview && wrangler pages deploy"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:",
@@ -35,6 +38,7 @@
     "vite": "catalog:",
     "vue": "catalog:",
     "vue-router": "catalog:",
-    "vue-tsc": "catalog:"
+    "vue-tsc": "catalog:",
+    "wrangler": "catalog:"
   }
 }
