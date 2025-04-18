@@ -37,15 +37,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Running Lint
-        run: pnpm lintfix
-      - name: Add commit
-        uses: EndBug/add-and-commit@v9
-        if: ${{ !env.ACT }} # 로컬 테스트 시에는 커밋하지 않는다.
-        with:
-          commit: --signoff
-          default_author: github_actor
-          message: 'style: 자동 코드 스타일 수정 [skip ci]'
-          push: true
+        run: pnpm lint
   build:
     name: Build
     runs-on: ubuntu-latest
@@ -133,7 +125,8 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_WORKER_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_WORKER_ACCOUNT_ID }}
           packageManager: pnpm
-          command: "pages deploy --project-name=pawqar --commit-hash=${{ github.sha }} --branch=pr-${{ github.event.number }}"
+          command:
+            'pages deploy --project-name=pawqar --commit-hash=${{ github.sha }} --branch=pr-${{ github.event.number }}'
           preCommands: |
             pnpm install --frozen-lockfile
             pnpm build:preview
