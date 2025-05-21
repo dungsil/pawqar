@@ -20,6 +20,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "catalog:",
     "@libsql/client": "catalog:",
+    "@libsql/core": "catalog:",
     "@parcel/watcher": "catalog:",
     "@tailwindcss/vite": "catalog:",
     "@types/node": "catalog:",

@@ -3,6 +3,7 @@ overrides:
 catalog:
   '@antfu/eslint-config': 4.12.0
   '@libsql/client': 0.15.7
+  '@libsql/core': 0.15.7
   '@parcel/watcher': 2.5.1
   '@tailwindcss/vite': 4.1.3
   '@types/node': 22.14.0
