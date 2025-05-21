@@ -32,6 +32,11 @@ export default defineNuxtConfig({
       // `tailwind-variants` auto imports
       { from: 'tailwind-variants', name: 'tv' },
       { from: 'tailwind-variants', name: 'VariantProps', type: true },
+
+      // `valibot` auto imports
+      { from: 'valibot', name: '*', as: 'v' },
+      { from: 'valibot', name: 'InferInput', type: true },
+      { from: 'valibot', name: 'InferOutput', type: true },
     ],
   },
 
@@ -39,6 +44,15 @@ export default defineNuxtConfig({
     preset: 'node-server',
     experimental: {
       database: true,
+    },
+
+    imports: {
+      imports: [
+        // `valibot` auto imports
+        { from: 'valibot', name: '*', as: 'v' },
+        { from: 'valibot', name: 'InferInput', type: true },
+        { from: 'valibot', name: 'InferOutput', type: true },
+      ],
     },
 
     database: {

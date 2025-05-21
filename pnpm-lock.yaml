@@ -33,6 +33,9 @@ catalogs:
     drizzle-orm:
       specifier: 0.43.1
       version: 0.43.1
+    drizzle-valibot:
+      specifier: 0.4.2
+      version: 0.4.2
     eslint:
       specifier: 9.24.0
       version: 9.24.0
@@ -66,6 +69,9 @@ catalogs:
     typescript:
       specifier: 5.8.3
       version: 5.8.3
+    valibot:
+      specifier: 1.1.0
+      version: 1.1.0
     vite:
       specifier: 6.3.5
       version: 6.3.5
@@ -116,6 +122,9 @@ importers:
       drizzle-orm:
         specifier: 'catalog:'
         version: 0.43.1(@libsql/client@0.15.7)
+      drizzle-valibot:
+        specifier: 'catalog:'
+        version: 0.4.2(drizzle-orm@0.43.1(@libsql/client@0.15.7))(valibot@1.1.0(typescript@5.8.3))
       esbuild:
         specifier: 0.25.4
         version: 0.25.4
@@ -152,6 +161,9 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: 5.8.3
+      valibot:
+        specifier: 'catalog:'
+        version: 1.1.0(typescript@5.8.3)
       vite:
         specifier: 'catalog:'
         version: 6.3.5(@types/node@22.14.0)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.39.2)(yaml@2.8.0)
@@ -2646,6 +2658,12 @@ packages:
         optional: true
       sqlite3:
         optional: true
+
+  drizzle-valibot@0.4.2:
+    resolution: {integrity: sha512-tzjT7g0Di/HX7426marIy8IDtWODjPgrwvgscdevLQRUe5rzYzRhx6bDsYLdDFF9VI/eaYgnjNeF/fznWJoUjg==}
+    peerDependencies:
+      drizzle-orm: '>=0.36.0'
+      valibot: '>=1.0.0-beta.7'
 
   dunder-proto@1.0.1:
     resolution: {integrity: sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==}
@@ -5315,6 +5333,14 @@ packages:
   uuid@11.1.0:
     resolution: {integrity: sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A==}
     hasBin: true
+
+  valibot@1.1.0:
+    resolution: {integrity: sha512-Nk8lX30Qhu+9txPYTwM0cFlWLdPFsFr6LblzqIySfbZph9+BFsAHsNvHOymEviUepeIW6KFHzpX8TKhbptBXXw==}
+    peerDependencies:
+      typescript: '>=5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
@@ -8241,6 +8267,11 @@ snapshots:
   drizzle-orm@0.43.1(@libsql/client@0.15.7):
     optionalDependencies:
       '@libsql/client': 0.15.7
+
+  drizzle-valibot@0.4.2(drizzle-orm@0.43.1(@libsql/client@0.15.7))(valibot@1.1.0(typescript@5.8.3)):
+    dependencies:
+      drizzle-orm: 0.43.1(@libsql/client@0.15.7)
+      valibot: 1.1.0(typescript@5.8.3)
 
   dunder-proto@1.0.1:
     dependencies:
@@ -11531,6 +11562,10 @@ snapshots:
   util-deprecate@1.0.2: {}
 
   uuid@11.1.0: {}
+
+  valibot@1.1.0(typescript@5.8.3):
+    optionalDependencies:
+      typescript: 5.8.3
 
   validate-npm-package-license@3.0.4:
     dependencies:
