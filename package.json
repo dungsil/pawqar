@@ -18,9 +18,12 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:",
+    "@libsql/client": "catalog:",
     "@parcel/watcher": "catalog:",
     "@tailwindcss/vite": "catalog:",
     "@types/node": "catalog:",
+    "drizzle-kit": "catalog:",
+    "drizzle-orm": "catalog:",
     "eslint": "catalog:",
     "eslint-plugin-format": "catalog:",
     "eslint-plugin-vuejs-accessibility": "catalog:",
