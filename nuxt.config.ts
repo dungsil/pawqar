@@ -1,4 +1,5 @@
 import process from 'node:process'
+import { fileURLToPath } from 'node:url'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
@@ -8,6 +9,10 @@ export default defineNuxtConfig({
   app: {},
 
   css: ['assets/styles/main.css'],
+
+  alias: {
+    '#database': fileURLToPath(new URL('./database/index.ts', import.meta.url)),
+  },
 
   future: {
     compatibilityVersion: 4,
