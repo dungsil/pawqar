@@ -5,7 +5,7 @@
   "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977",
   "scripts": {
     "postinstall": "nuxi prepare",
-    "dev": "nuxi dev",
+    "dev": "nuxi dev --dotenv .env.dev",
     "dev:preview": "pnpm build --preset cloudflare-pages && wrangler pages dev",
     "build": "nuxi build",
     "build:preview": "nuxi build --preset cloudflare-pages",
@@ -14,6 +14,7 @@
     "lint": "run-p -s lint:*",
     "lintfix:eslint": "eslint --fix",
     "lintfix": "run-p -s lintfix:*",
+    "db:push": "drizzle-kit push",
     "start:preview": "pnpm build:preview && wrangler pages deploy"
   },
   "devDependencies": {
@@ -22,6 +23,7 @@
     "@parcel/watcher": "catalog:",
     "@tailwindcss/vite": "catalog:",
     "@types/node": "catalog:",
+    "dotenv": "catalog:",
     "drizzle-kit": "catalog:",
     "drizzle-orm": "catalog:",
     "esbuild": "catalog:",

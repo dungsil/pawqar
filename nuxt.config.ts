@@ -1,3 +1,4 @@
+import process from 'node:process'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
@@ -31,6 +32,18 @@ export default defineNuxtConfig({
 
   nitro: {
     preset: 'node-server',
+    experimental: {
+      database: true,
+    },
+
+    database: {
+      default: {
+        connector: 'libsql-node',
+        options: {
+          url: process.env.PAWQAR_DB_URL!,
+        },
+      },
+    },
   },
 
   vite: {

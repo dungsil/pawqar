@@ -21,6 +21,9 @@ catalogs:
     '@types/node':
       specifier: 22.14.0
       version: 22.14.0
+    dotenv:
+      specifier: 16.5.0
+      version: 16.5.0
     drizzle-kit:
       specifier: 0.31.1
       version: 0.31.1
@@ -98,6 +101,9 @@ importers:
       '@types/node':
         specifier: 'catalog:'
         version: 22.14.0
+      dotenv:
+        specifier: 'catalog:'
+        version: 16.5.0
       drizzle-kit:
         specifier: 'catalog:'
         version: 0.31.1

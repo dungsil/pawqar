@@ -1,3 +1,6 @@
+### Database ###
+.data/
+
 ### Cloudflare pages ###
 .wrangler/
 dist/
