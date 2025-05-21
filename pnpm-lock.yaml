@@ -27,6 +27,9 @@ catalogs:
     drizzle-orm:
       specifier: 0.43.1
       version: 0.43.1
+    esbuild:
+      specifier: 0.25.4
+      version: 0.25.4
     eslint:
       specifier: 9.24.0
       version: 9.24.0
@@ -101,6 +104,9 @@ importers:
       drizzle-orm:
         specifier: 'catalog:'
         version: 0.43.1(@libsql/client@0.15.7)
+      esbuild:
+        specifier: 'catalog:'
+        version: 0.25.4
       eslint:
         specifier: 'catalog:'
         version: 9.24.0(jiti@2.4.2)
