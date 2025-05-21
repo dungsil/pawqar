@@ -1,7 +1,7 @@
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
-  compatibilityDate: '2025-04-01',
+  compatibilityDate: '2025-05-01',
   modules: ['reka-ui/nuxt'],
 
   app: {},

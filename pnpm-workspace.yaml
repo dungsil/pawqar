@@ -9,7 +9,7 @@ catalog:
   jiti: 2.4.2
   nitropack: 2.11.8
   npm-run-all2: 7.0.2
-  nuxt: 3.16.2
+  nuxt: 3.17.4
   prettier: 3.5.3
   reka-ui: 2.2.0
   tailwind-variants: 1.0.0
@@ -18,7 +18,7 @@ catalog:
   vite: 6.2.6
   vue: 3.5.13
   vue-router: 4.5.0
-  vue-tsc: 2.2.8
+  vue-tsc: 2.2.10
   wrangler: 4.12.0
 
 onlyBuiltDependencies:
