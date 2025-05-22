@@ -31,9 +31,7 @@ export default defineESLintConfig({
     root: true,
     strict: true,
   },
-  typescript: {
-    tsconfigPath: './tsconfig.json',
-  },
+  typescript: true,
   vue: {
     a11y: true,
     sfcBlocks: true,

@@ -2,6 +2,8 @@ name: License compliance check
 
 on:
   pull_request:
+    types:
+      - synchronize
     branches:
       - main
 

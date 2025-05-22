@@ -1,3 +1,5 @@
+import process from 'node:process'
+import { fileURLToPath } from 'node:url'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
@@ -7,6 +9,10 @@ export default defineNuxtConfig({
   app: {},
 
   css: ['assets/styles/main.css'],
+
+  alias: {
+    '#database': fileURLToPath(new URL('./database/index.ts', import.meta.url)),
+  },
 
   future: {
     compatibilityVersion: 4,
@@ -26,11 +32,37 @@ export default defineNuxtConfig({
       // `tailwind-variants` auto imports
       { from: 'tailwind-variants', name: 'tv' },
       { from: 'tailwind-variants', name: 'VariantProps', type: true },
+
+      // `valibot` auto imports
+      { from: 'valibot', name: '*', as: 'v' },
+      { from: 'valibot', name: 'InferInput', type: true },
+      { from: 'valibot', name: 'InferOutput', type: true },
     ],
   },
 
   nitro: {
     preset: 'node-server',
+    experimental: {
+      database: true,
+    },
+
+    imports: {
+      imports: [
+        // `valibot` auto imports
+        { from: 'valibot', name: '*', as: 'v' },
+        { from: 'valibot', name: 'InferInput', type: true },
+        { from: 'valibot', name: 'InferOutput', type: true },
+      ],
+    },
+
+    database: {
+      default: {
+        connector: 'libsql-node',
+        options: {
+          url: process.env.PAWQAR_DB_URL!,
+        },
+      },
+    },
   },
 
   vite: {
