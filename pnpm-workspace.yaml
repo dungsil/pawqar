@@ -5,7 +5,7 @@ catalog:
   '@types/node': 22.14.0
   eslint: 10.0.0
   eslint-plugin-format: 1.4.0
-  eslint-plugin-vuejs-accessibility: 2.4.2
+  eslint-plugin-vuejs-accessibility: 2.5.0
   jiti: 2.4.2
   nitropack: 2.11.8
   npm-run-all2: 7.0.2
