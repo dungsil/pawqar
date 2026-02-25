@@ -10,7 +10,7 @@ catalog:
   nitropack: 2.11.8
   npm-run-all2: 7.0.2
   nuxt: 3.17.4
-  reka-ui: 2.2.0
+  reka-ui: 2.8.2
   tailwind-variants: 1.0.0
   tailwindcss: 4.1.18
   typescript: 5.8.3
