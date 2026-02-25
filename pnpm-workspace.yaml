@@ -14,7 +14,7 @@ catalog:
   tailwind-variants: 1.0.0
   tailwindcss: 4.1.18
   typescript: 5.8.3
-  vite: 6.3.5
+  vite: 6.4.1
   vue: 3.5.29
   vue-router: 4.5.0
   vue-tsc: 2.2.12
