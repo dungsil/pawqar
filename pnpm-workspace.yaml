@@ -6,7 +6,7 @@ catalog:
   eslint: 10.0.2
   eslint-plugin-format: 2.0.1
   eslint-plugin-vuejs-accessibility: 2.5.0
-  jiti: 2.4.2
+  jiti: 2.6.1
   nitropack: 2.11.8
   npm-run-all2: 7.0.2
   nuxt: 3.17.4
