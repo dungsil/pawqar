@@ -22,7 +22,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Install PNPM
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v5
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
