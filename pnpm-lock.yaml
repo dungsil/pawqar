@@ -58,8 +58,8 @@ catalogs:
       specifier: 3.5.32
       version: 3.5.32
     vue-router:
-      specifier: 4.5.0
-      version: 4.5.0
+      specifier: 4.6.4
+      version: 4.6.4
     vue-tsc:
       specifier: 2.2.12
       version: 2.2.12
@@ -124,7 +124,7 @@ importers:
         version: 3.5.32(typescript@5.8.3)
       vue-router:
         specifier: 'catalog:'
-        version: 4.5.0(vue@3.5.32(typescript@5.8.3))
+        version: 4.6.4(vue@3.5.32(typescript@5.8.3))
       vue-tsc:
         specifier: 'catalog:'
         version: 2.2.12(typescript@5.8.3)
@@ -6180,11 +6180,6 @@ packages:
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0 || ^10.0.0
-
-  vue-router@4.5.0:
-    resolution: {integrity: sha512-HDuk+PuH5monfNuY+ct49mNmkCRK4xJAV9Ts4z9UFc4rzdDnxQLyCMGGc8pKhZhHTVzfanpNwB/lwqevcBwI4w==}
-    peerDependencies:
-      vue: ^3.2.0
 
   vue-router@4.6.4:
     resolution: {integrity: sha512-Hz9q5sa33Yhduglwz6g9skT8OBPii+4bFn88w6J+J4MfEo4KRRpmiNG/hHHkdbRFlLBOqxN8y8gf2Fb0MTUgVg==}
@@ -13126,11 +13121,6 @@ snapshots:
       semver: 7.7.4
     transitivePeerDependencies:
       - supports-color
-
-  vue-router@4.5.0(vue@3.5.32(typescript@5.8.3)):
-    dependencies:
-      '@vue/devtools-api': 6.6.4
-      vue: 3.5.32(typescript@5.8.3)
 
   vue-router@4.6.4(vue@3.5.32(typescript@5.8.3)):
     dependencies:
