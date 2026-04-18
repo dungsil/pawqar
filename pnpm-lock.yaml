@@ -40,8 +40,8 @@ catalogs:
       specifier: 3.17.4
       version: 3.17.4
     reka-ui:
-      specifier: 2.2.0
-      version: 2.2.0
+      specifier: 2.9.6
+      version: 2.9.6
     tailwind-variants:
       specifier: 1.0.0
       version: 1.0.0
@@ -106,7 +106,7 @@ importers:
         version: 3.17.4(@netlify/blobs@9.1.2)(@parcel/watcher@2.5.6)(@types/node@22.14.0)(cac@6.7.14)(db0@0.3.4)(eslint@10.2.1(jiti@2.4.2))(ioredis@5.10.1)(lightningcss@1.30.2)(magicast@0.5.2)(optionator@0.9.4)(rollup@4.60.1)(terser@5.46.1)(typescript@5.8.3)(vite@6.3.5(@types/node@22.14.0)(jiti@2.4.2)(lightningcss@1.30.2)(terser@5.46.1)(yaml@2.8.3))(vue-tsc@2.2.12(typescript@5.8.3))(yaml@2.8.3)
       reka-ui:
         specifier: 'catalog:'
-        version: 2.2.0(typescript@5.8.3)(vue@3.5.32(typescript@5.8.3))
+        version: 2.9.6(vue@3.5.32(typescript@5.8.3))
       tailwind-variants:
         specifier: 'catalog:'
         version: 1.0.0(tailwindcss@4.1.18)
@@ -2403,14 +2403,18 @@ packages:
   '@vue/shared@3.5.32':
     resolution: {integrity: sha512-ksNyrmRQzWJJ8n3cRDuSF7zNNontuJg1YHnmWRJd2AMu8Ij2bqwiiri2lH5rHtYPZjj4STkNcgcmiQqlOjiYGg==}
 
-  '@vueuse/core@12.8.2':
-    resolution: {integrity: sha512-HbvCmZdzAu3VGi/pWYm5Ut+Kd9mn1ZHnn4L5G8kOQTPs/IwIAmJoBrmYk2ckLArgMXZj0AW3n5CAejLUO+PhdQ==}
+  '@vueuse/core@14.2.1':
+    resolution: {integrity: sha512-3vwDzV+GDUNpdegRY6kzpLm4Igptq+GA0QkJ3W61Iv27YWwW/ufSlOfgQIpN6FZRMG0mkaz4gglJRtq5SeJyIQ==}
+    peerDependencies:
+      vue: ^3.5.0
 
-  '@vueuse/metadata@12.8.2':
-    resolution: {integrity: sha512-rAyLGEuoBJ/Il5AmFHiziCPdQzRt88VxR+Y/A/QhJ1EWtWqPBBAxTAFaSkviwEuOEZNtW8pvkPgoCZQ+HxqW1A==}
+  '@vueuse/metadata@14.2.1':
+    resolution: {integrity: sha512-1ButlVtj5Sb/HDtIy1HFr1VqCP4G6Ypqt5MAo0lCgjokrk2mvQKsK2uuy0vqu/Ks+sHfuHo0B9Y9jn9xKdjZsw==}
 
-  '@vueuse/shared@12.8.2':
-    resolution: {integrity: sha512-dznP38YzxZoNloI0qpEfpkms8knDtaoQ6Y/sfS0L7Yki4zh40LFHEhur0odJC6xTHG5dxWVPiUWBXn+wCG2s5w==}
+  '@vueuse/shared@14.2.1':
+    resolution: {integrity: sha512-shTJncjV9JTI4oVNyF1FQonetYAiTBd+Qj7cY89SWbXSkx7gyhrgtEdF2ZAVWS1S3SHlaROO6F2IesJxQEkZBw==}
+    peerDependencies:
+      vue: ^3.5.0
 
   '@whatwg-node/disposablestack@0.0.6':
     resolution: {integrity: sha512-LOtTn+JgJvX8WfBVJtF08TGrdjuFzGJc4mkP8EdDI8ADbvO7kiexYep1o8dwnt0okb0jYclCDXF13xU7Ge4zSw==}
@@ -5333,10 +5337,10 @@ packages:
     resolution: {integrity: sha512-cnE+y8bz4NhMjISKbgeVJtqNbtf5QpjZP+Bslo+UqkIt9QPnX9q095eiRRASJG1/tz6dlNr6Z5NsBiWYokp6EQ==}
     hasBin: true
 
-  reka-ui@2.2.0:
-    resolution: {integrity: sha512-eeRrLI4LwJ6dkdwks6KFNKGs0+beqZlHO3JMHen7THDTh+yJ5Z0KNwONmOhhV/0hZC2uJCEExgG60QPzGstkQg==}
+  reka-ui@2.9.6:
+    resolution: {integrity: sha512-K6bL457owpvWONc7hsjFxo3HDC9s6IzhRqShW0w9JSKelPGfRbkHD558UQTn/NH1cvrXVHygKyC7fExFmRketg==}
     peerDependencies:
-      vue: '>= 3.2.0'
+      vue: '>= 3.4.0'
 
   remove-trailing-separator@1.1.0:
     resolution: {integrity: sha512-/hS+Y0u3aOfIETiaiirUFwDBDzmXPvO+jAfKTitUngIPzdKc6Z0LoFjM/CK5PL4C+eKwHohlHAb6H0VFfmmUsw==}
@@ -8529,22 +8533,18 @@ snapshots:
 
   '@vue/shared@3.5.32': {}
 
-  '@vueuse/core@12.8.2(typescript@5.8.3)':
+  '@vueuse/core@14.2.1(vue@3.5.32(typescript@5.8.3))':
     dependencies:
       '@types/web-bluetooth': 0.0.21
-      '@vueuse/metadata': 12.8.2
-      '@vueuse/shared': 12.8.2(typescript@5.8.3)
+      '@vueuse/metadata': 14.2.1
+      '@vueuse/shared': 14.2.1(vue@3.5.32(typescript@5.8.3))
       vue: 3.5.32(typescript@5.8.3)
-    transitivePeerDependencies:
-      - typescript
 
-  '@vueuse/metadata@12.8.2': {}
+  '@vueuse/metadata@14.2.1': {}
 
-  '@vueuse/shared@12.8.2(typescript@5.8.3)':
+  '@vueuse/shared@14.2.1(vue@3.5.32(typescript@5.8.3))':
     dependencies:
       vue: 3.5.32(typescript@5.8.3)
-    transitivePeerDependencies:
-      - typescript
 
   '@whatwg-node/disposablestack@0.0.6':
     dependencies:
@@ -12115,22 +12115,21 @@ snapshots:
     dependencies:
       jsesc: 3.0.2
 
-  reka-ui@2.2.0(typescript@5.8.3)(vue@3.5.32(typescript@5.8.3)):
+  reka-ui@2.9.6(vue@3.5.32(typescript@5.8.3)):
     dependencies:
       '@floating-ui/dom': 1.7.6
       '@floating-ui/vue': 1.1.11(vue@3.5.32(typescript@5.8.3))
       '@internationalized/date': 3.12.0
       '@internationalized/number': 3.6.5
       '@tanstack/vue-virtual': 3.13.23(vue@3.5.32(typescript@5.8.3))
-      '@vueuse/core': 12.8.2(typescript@5.8.3)
-      '@vueuse/shared': 12.8.2(typescript@5.8.3)
+      '@vueuse/core': 14.2.1(vue@3.5.32(typescript@5.8.3))
+      '@vueuse/shared': 14.2.1(vue@3.5.32(typescript@5.8.3))
       aria-hidden: 1.2.6
       defu: 6.1.7
       ohash: 2.0.11
       vue: 3.5.32(typescript@5.8.3)
     transitivePeerDependencies:
       - '@vue/composition-api'
-      - typescript
 
   remove-trailing-separator@1.1.0: {}
 
