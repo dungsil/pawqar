@@ -29,7 +29,7 @@ jobs:
           cache: pnpm
           node-version-file: .node-version
       - id: deploy
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
           gitHubToken: ${{ github.token }}
           apiToken: ${{ secrets.CLOUDFLARE_WORKER_API_TOKEN }}
